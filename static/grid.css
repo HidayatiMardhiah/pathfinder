@@ -10,3 +10,12 @@
 .container {
     position: center;
 }
+.wall {
+    background-color: darkgrey;
+}
+.start {
+    background-color: green;
+}
+.end {
+    background-color: red;
+}

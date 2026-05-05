@@ -22,7 +22,7 @@ def bfs(grid, start, end):
         if node == end:
             return reconstruct_path(parent,end)
 
-        # process the node (for example, print it)
+        # print the node to show the order of traversal
         print(node)
 
         # Explore the neighbors of the node
@@ -50,23 +50,13 @@ def find_cells(grid,row, col):
     neighbors = []
 
     # Check the four possible directions (up, down, left, right)
-    if row > 0:
+    if row > 0 and grid[row-1][col] == 0:
         neighbors.append((row -1, col))
-    if row < len(grid) - 1:
+    if row < len(grid) - 1 and grid[row+1][col] == 0:
         neighbors.append((row + 1, col))
-    if col > 0:
+    if col > 0 and grid[row][col -1] == 0:
         neighbors.append((row, col - 1))
-    if col < len(grid[0]) - 1:
+    if col < len(grid[0]) - 1 and grid[row][col + 1] == 0:
         neighbors.append((row, col + 1))
     return neighbors
 
-grid = [
-    [0, 0, 0, 1, 0],
-    [0, 1, 0, 1, 0],
-    [0, 1, 0, 0, 0],
-]
-
-start = (0, 0)
-end = (2, 4)
-
-print(bfs(grid, start, end))
