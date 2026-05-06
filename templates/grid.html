@@ -3,8 +3,24 @@
         <link rel="stylesheet" href="/static/grid.css">
         <script src="/static/grid.js" defer></script>
     </head>
+    <header>
+        <h1>Pathfinding Visualizer</h1>
+
+        <div id="legend">
+            <span class="start">Start</span>
+            <span class="end">End</span>
+            <span class="wall">Wall</span>
+            <span class="path">Path</span>
+        </div>
+
+    </header>
     <body>
         <p id="message"> Click on a cell to set the start position</p>
-        <button id="findpath" onClick="findPath()"> Find Path</button>
+        
+        <div id="button">
+            <button id="findpath" onClick="findPath()"> Find Path</button>
+            <button id="reset" onClick="resetGrid()"> Reset Grid</button>
+        </div>
+  
     </body>
 </html>

@@ -40,9 +40,11 @@ function change_color() {
             else if (end === null) {
                 box.classList.add('end')
                 end = box // assign each start and end box to remember its color and avoid override
+                message.textContent = "You may add walls by clicking on the cells. Click 'Find Path' to see the result."
             }
             else if (box !== start && box !== end){ 
                  box.classList.add('wall')
+                 
             }
         })
     })
@@ -89,3 +91,13 @@ function findPath() {
     })
 }
 
+function resetGrid() {
+    const boxes = document.querySelectorAll('.box')
+    boxes.forEach(box => {
+        box.classList.remove('start','end', 'wall')
+        box.style.backgroundColor = '' 
+    })
+    start = null
+    end = null
+    message.textContent = 'Click on a cell to set the start position'
+}

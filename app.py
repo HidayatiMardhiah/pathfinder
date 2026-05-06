@@ -18,3 +18,7 @@ def find_path():
     end = tuple(data['end'])
     path = bfs(grid, start, end)
     return jsonify({'path': path})
+
+@app.route('/reset', methods=['POST'])
+def reset():
+    return jsonify({'message': 'Grid reset successful'})    
