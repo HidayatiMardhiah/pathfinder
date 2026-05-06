@@ -1,4 +1,4 @@
-# Pathfinding Visualizer
+Pathfinding Visualizer
 
 A web app that visualises the BFS (Breadth First Search) 
 algorithm finding the shortest path on a grid.
